@@ -1,10 +1,14 @@
 ---
+	import Navbar from "../components/Navbar.astro";
+
+	import '../styles/global.css';
+
 interface Props {
 	title: string;
 }
-const { title } = Astro.props
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+
+const { title } = Astro.props;
+// import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -13,11 +17,13 @@ import Footer from "../components/Footer.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{ title }</title>
 	</head>
 	<body>
-		<Navbar />
-    <slot />
+		<main>
+			<Navbar />
+			<slot />
+		</main>
 	</body>
-  <Footer />
+  <!-- <Footer /> -->
 </html>
